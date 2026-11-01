@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop wigs and wig styling services at Doctor Steve Wigs, Cathedral Mall, Kakamega, Kenya. Enquire and order through WhatsApp.">
+  <meta name="theme-color" content="#12332b">
+  <title>Doctor Steve Wigs | Kakamega</title>
+
+  <style>
+    :root {
+      --primary: #087f5b;
+      --dark: #12332b;
+      --light: #f3f8f5;
+      --white: #ffffff;
+      --text: #334155;
+      --gold: #d6ad60;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select, textarea { font: inherit; }
+
+    .topbar {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 9px 14px;
+      font-size: .85rem;
+    }
+
+    header {
+      background: white;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 12px #0000000b;
+    }
+
+    .brand { color: var(--dark); font-weight: 800; font-size: 1.25rem; }
+    .brand span { color: var(--primary); }
+
+    nav { display: flex; gap: 17px; flex-wrap: wrap; font-size: .92rem; }
+    nav a:hover { color: var(--primary); }
+
+    .hero {
+      background: linear-gradient(120deg, #12332b, #087f5b);
+      color: white;
+      padding: 65px 6%;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #f0d59b;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; margin: 14px 0; }
+    .hero p { max-width: 600px; margin-bottom: 22px; }
+    .hero-art { text-align: center; font-size: 7rem; }
+    .hero-art small { display: block; font-size: 1rem; color: #e1eee7; }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-gold { background: var(--gold); color: #1c2923; }
+    .btn-green { background: var(--primary); color: white; }
+    .btn-outline { border: 1px solid #cbd5d1; background: white; color: var(--dark); }
+    .btn:hover { filter: brightness(.96); }
+
+    section { padding: 52px 6%; }
+    .section-heading { text-align: center; margin-bottom: 28px; }
+    .section-heading h2 { color: var(--dark); font-size: 2rem; }
+    .section-heading p { margin-top: 7px; }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .filters input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #cbd5d1;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #e4ebe6;
+      border-radius: 13px;
+      overflow: hidden;
+      box-shadow: 0 5px 16px #102e2010;
+    }
+
+    .product-photo {
+      height: 205px;
+      background: linear-gradient(145deg, #e3eee7, #f4e7d7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #50685b;
+      text-align: center;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .product-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: 15px; }
+    .product h3 { color: var(--dark); font-size: 1.05rem; }
+    .product p { font-size: .9rem; margin: 7px 0; }
+    .price { color: var(--primary); font-weight: 800; margin-bottom: 12px; }
+    .product .btn { width: 100%; }
+
+    .empty { grid-column: 1 / -1; text-align: center; padding: 25px; }
+
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service {
+      border: 1px solid #e4ebe6;
+      border-radius: 12px;
+      padding: 22px;
+      background: var(--light);
+    }
+
+    .service h3 { color: var(--dark); margin-bottom: 8px; }
+
+    .order-wrap {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .contact-card, .order-form {
+      background: white;
+      border: 1px solid #e4ebe6;
+      padding: 25px;
+      border-radius: 14px;
+    }
+
+    .contact-card h3 { color: var(--dark); margin-bottom: 12px; }
+    .contact-card p { margin: 10px 0; }
+
+    .order-form label {
+      display: block;
+      font-weight: bold;
+      margin: 12px 0 5px;
+    }
+
+    .order-form input, .order-form select, .order-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5d1;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .order-form textarea { min-height: 90px; resize: vertical; }
+    .order-form .btn { width: 100%; margin-top: 17px; }
+
+    .note { font-size: .85rem; color: #64748b; margin-top: 12px; }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 28px 6%;
+    }
+
+    footer p { margin: 5px 0; }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 17px;
+      bottom: 17px;
+      background: #168a4b;
+      color: white;
+      border-radius: 999px;
+      padding: 13px 17px;
+      font-weight: bold;
+      box-shadow: 0 4px 18px #0003;
+      z-index: 10;
+    }
+
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { grid-template-columns: 1fr; padding-top: 45px; }
+      .hero-art { display: none; }
+      .order-wrap { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      header { padding: 15px 5%; }
+      nav { gap: 12px; font-size: .85rem; }
+      section { padding: 38px 5%; }
+      .grid { gap: 10px; }
+      .product-photo { height: 155px; }
+      .product-info { padding: 11px; }
+      .product h3 { font-size: .95rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .filters { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    Quality wigs and styling services in Kakamega
+  </div>
+
+  <header>
+    <a class="brand" href="#home">DOCTOR <span>STEVE WIGS</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop wigs</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">Your beauty, your style</div>
+        <h1>Find a wig that feels like you.</h1>
+        <p>
+          Explore wig styles, ask about availability and enquire about
+          styling at Doctor Steve Wigs, Cathedral Mall, Kakamega.
+        </p>
+        <a class="btn btn-gold" href="#shop">Explore our wigs</a>
+        <a class="btn btn-outline" href="#contact">Contact us</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        ✨
+        <small>Style. Confidence. Beauty.</small>
+      </div>
+    </section>
+
+    <section id="shop">
+      <div class="section-heading">
+        <h2>Our Wig Collection</h2>
+        <p>Choose a style and enquire through WhatsApp for current price and availability.</p>
+      </div>
+
+      <div class="filters">
+        <input id="search" type="search"
+          placeholder="Search wigs by name or style..."
+          aria-label="Search wigs">
+      </div>
+
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-heading">
+        <h2>Our Services</h2>
+        <p>Contact us to confirm service availability and prices.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service">
+          <h3>Wig Fitting</h3>
+          <p>Ask about fitting a wig to achieve your preferred look.</p>
+        </article>
+        <article class="service">
+          <h3>Wig Styling</h3>
+          <p>Enquire about styling and customization options.</p>
+        </article>
+        <article class="service">
+          <h3>Wig Care</h3>
+          <p>Ask about washing, conditioning and maintenance services.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-heading">
+        <h2>Order or Contact Us</h2>
+        <p>Fill in the details below. WhatsApp will open with your enquiry ready to send.</p>
+      </div>
+
+      <div class="order-wrap">
+        <div class="contact-card">
+          <h3>Visit Doctor Steve Wigs</h3>
+          <p><strong>Location:</strong> Cathedral Mall, Kakamega, Kenya</p>
+          <p><strong>WhatsApp:</strong> 0111 405008</p>
+          <p><strong>Opening hours:</strong> Please contact us to confirm.</p>
+          <a class="btn btn-green" id="contactWhatsApp"
+             href="https://wa.me/254111405008"
+             target="_blank" rel="noopener">
+            Chat with us on WhatsApp
+          </a>
+          <p class="note">
+            Orders are confirmed by our team on WhatsApp. Product availability,
+            delivery options and payment arrangements must be agreed before payment.
+          </p>
+          <p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Cathedral+Mall+Kakamega+Kenya"
+               target="_blank" rel="noopener">
+              Find Cathedral Mall on Google Maps
+            </a>
+          </p>
+        </div>
+
+        <form class="order-form" id="orderForm">
+          <h3>Send a product enquiry</h3>
+
+          <label for="customerName">Your name</label>
+          <input id="customerName" name="customerName"
+                 autocomplete="name" required placeholder="Enter your name">
+
+          <label for="customerPhone">Your phone number</label>
+          <input id="customerPhone" name="customerPhone"
+                 type="tel" autocomplete="tel"
+                 required placeholder="Enter your phone number">
+
+          <label for="productSelect">Choose a product</label>
+          <select id="productSelect" name="productSelect" required>
+            <option value="">Select a wig</option>
+          </select>
+
+          <label for="quantity">Quantity</label>
+          <input id="quantity" name="quantity" type="number"
+                 min="1" max="20" value="1" required>
+
+          <label for="fulfilment">How would you like to receive it?</label>
+          <select id="fulfilment" name="fulfilment" required>
+            <option value="Shop pickup">Pick up at the shop</option>
+            <option value="Ask about delivery">Ask about delivery</option>
+          </select>
+
+          <label for="message">Additional details (optional)</label>
+          <textarea id="message" name="message"
+                    placeholder="Colour, length, style or styling service..."></textarea>
+
+          <button class="btn btn-green" type="submit">
+            Send enquiry through WhatsApp
+          </button>
+
+          <p class="note">
+            This form does not collect or store orders on the website.
+            It opens WhatsApp so you can review and send your message.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Doctor Steve Wigs</strong></p>
+    <p>Cathedral Mall, Kakamega, Kenya</p>
+    <p>© <span id="year"></span> Doctor Steve Wigs. All rights reserved.</p>
+  </footer>
+
+  <a class="floating-whatsapp"
+     href="https://wa.me/254111405008?text=Hello%20Doctor%20Steve%20Wigs%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+     target="_blank" rel="noopener"
+     aria-label="Chat with Doctor Steve Wigs on WhatsApp">
+    WhatsApp us
+  </a>
+
+  <script>
+    // EDIT THESE SAMPLE LISTINGS to match your real stock.
+    // Put your product photos in an "images" folder in the repository.
+    const products = [
+      {
+        id: "wig-1",
+        name: "Everyday Synthetic Wig",
+        description: "An everyday style. Ask us about colours and length.",
+        price: "Ask for price",
+        image: "images/wig1.jpg"
+      },
+      {
+        id: "wig-2",
+        name: "Premium Style Wig",
+        description: "Ask about available premium styles.",
+        price: "Ask for price",
+        image: "images/wig2.jpg"
+      },
+      {
+        id: "wig-3",
+        name: "Curly Style Wig",
+        description: "Ask about curl patterns and available colours.",
+        price: "Ask for price",
+        image: "images/wig3.jpg"
+      },
+      {
+        id: "wig-4",
+        name: "Straight Style Wig",
+        description: "Ask about length, texture and availability.",
+        price: "Ask for price",
+        image: "images/wig4.jpg"
+      }
+    ];
+
+    // Kenyan number in international format, digits only.
+    const WHATSAPP_NUMBER = "254111405008";
+
+    const productGrid = document.getElementById("productGrid");
+    const productSelect = document.getElementById("productSelect");
+    const searchInput = document.getElementById("search");
+
+    function makeWhatsAppLink(message) {
+      return "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+    }
+
+    function renderProducts(searchTerm = "") {
+      const term = searchTerm.trim().toLowerCase();
+
+      const filtered = products.filter(product =>
+        (product.name + " " + product.description)
+          .toLowerCase().includes(term)
+      );
+
+      productGrid.innerHTML = "";
+
+      if (filtered.length === 0) {
+        productGrid.innerHTML =
+          '<p class="empty">No matching products. Please try another search.</p>';
+        return;
+      }
+
+      filtered.forEach(product => {
+        const card = document.createElement("article");
+        card.className = "product";
+
+        const photo = document.createElement("div");
+        photo.className = "product-photo";
+
+        const img = document.createElement("img");
+        img.src = product.image;
+        img.alt = product.name;
+        img.loading = "lazy";
+        img.onerror = () => {
+          photo.innerHTML = "";
+          photo.textContent = "Add a product photo";
+        };
+        photo.appendChild(img);
+
+        const info = document.createElement("div");
+        info.className = "product-info";
+
+        const title = document.createElement("h3");
+        title.textContent = product.name;
+
+        const description = document.createElement("p");
+        description.textContent = product.description;
+
+        const price = document.createElement("div");
+        price.className = "price";
+        price.textContent = product.price;
+
+        const button = document.createElement("a");
+        button.className = "btn btn-green";
+        button.textContent = "Enquire on WhatsApp";
+        button.href = makeWhatsAppLink(
+          "Hello Doctor Steve Wigs! I am interested in: " +
+          product.name + ". Please confirm the price and availability."
+        );
+        button.target = "_blank";
+        button.rel = "noopener";
+
+        info.append(title, description, price, button);
+        card.append(photo, info);
+        productGrid.appendChild(card);
+      });
+    }
+
+    products.forEach(product => {
+      const option = document.createElement("option");
+      option.value = product.id;
+      option.textContent = product.name;
+      productSelect.appendChild(option);
+    });
+
+    searchInput.addEventListener("input", event => {
+      renderProducts(event.target.value);
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const productId = productSelect.value;
+      const quantity = document.getElementById("quantity").value;
+      const fulfilment = document.getElementById("fulfilment").value;
+      const details = document.getElementById("message").value.trim();
+
+      const product = products.find(item => item.id === productId);
+
+      if (!product || !name || !phone || Number(quantity) < 1) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      const message =
+        "NEW ENQUIRY - DOCTOR STEVE WIGS\n\n" +
+        "Customer: " + name + "\n" +
+        "Customer phone: " + phone + "\n" +
+        "Product: " + product.name + "\n" +
+        "Quantity: " + quantity + "\n" +
+        "Collection/delivery: " + fulfilment + "\n" +
+        "Extra details: " + (details || "None") + "\n\n" +
+        "Please confirm current price, stock availability and payment options.";
+
+      window.open(makeWhatsAppLink(message), "_blank", "noopener");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+  </script>
+</body>
+</html>
